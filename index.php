@@ -33,16 +33,39 @@
         }
 
     </style>
-    <h1>reģistrācijas forma</h1>
-    <input placeholder="Username" id="UserNameField" type="text">
-    <input placeholder="Password" id="PassWordField" type="password">
-    <input placeholder="Email" id="EmailField" type="email">
-    <button onclick="submit()" id="SubmitButton" type="submit">submit</button>
+
+    <?php
+        $message = "";
+
+        if (isset($_POST['SubmitBtn'])) {
+
+        $user = $_POST['UserNameField'] ?? "";
+        $pass = $_POST['PassWordField'] ?? "";
+        $email = $_POST['EmailField'] ?? "";
+
+        if (empty($user) || empty($pass) || empty($email)) {
+            $message = "<p style='color:red;'>Lūdzu aizpildiet visus laukus!</p>";
+        } else {
+            $message = "<p style='color:green;'>Reģistrēšanās veiksmīga!</p>";
+        }
+    }
+?>
+    
+    <form method="POST">
+        <h1>reģistrācijas forma</h1>
+        <input placeholder="Username" name="UserNameField" type="text">
+        <input placeholder="Password" name="PassWordField" type="password">
+        <input placeholder="Email" name="EmailField" type="email">
+        <button type="submit" name="SubmitBtn">submit</button>
+    </form>
 
     <script>
         function submit(){
             alert("Reģistrēšanās veiksmīga!");
         }
+
     </script>
+
+    <?= $message ?>
 </body>
 </html>
