@@ -62,22 +62,29 @@
 </head>
 <style>
         body{
-            background-image: url(fons.png) ;
+            background-image: url(fons.jpg);
+            background-size: cover;
+            background-position: center; 
+            height: 100vh;                       
             display: flex;
             flex-direction: column;
+            justify-content: center;        
             align-items: center;
-            padding-top: 60px;
-            background-size: cover;
-
-            background-position: center;
-            height: 100vh;
-
-
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+        }
+        .form-box{
+            background: rgba(255, 255, 255, 0.94);
+            padding: 40px;
+            width: 800px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            position: relative;
         }
         h1{
-            color:rgb(49, 74, 85);
+            color: #323e68;
             font-size: 40px;
-            padding: 10px;
+            margin-bottom: 25px
         }
         input{
             display: block;
@@ -86,38 +93,50 @@
             border-radius: 10px;
             width: 280px;
             font-size: 20px;
+            color: #262424;
 
         }
-        button{
-            padding: 10px;
-            background-color:rgb(49, 74, 85);
+        #SubmitButton{
+            padding: 12px;
+            width: 290px;
+            background-color: #323e68;
             color: white;
             font-weight: bold;
-            width: 300px;
             margin-top: 15px;
-            border-radius: 14px;
+            border-radius: 6px;
             cursor: pointer;
             margin-left: 15px;
             font-size: 15px;
         }
-        .form-box{
-            background: rgb(240, 240, 240);
-            height:450px;
-            width: 700px;
-            border-radius: 30px;
+        .error{
+            color: #D60000;
+
         }
-        img{
+        .logo{
             height: 300px;
-            width: 420px;
             position: absolute;
-            top: 120px;
-            right: 280px;
+            top: 0px;
+            right: 0px;
+        }
+        .ilustracija{
+            height: 400px;
+            position: absolute;
+            bottom: -100px;
+            right: -150px;            
+        }
+        .header{
+            width: 880px;
+            height: 50px;
+            position: absolute;
+            top: 0px;
+            right:0px;
+
         }
     </style>
 <body>
     
 <div class="form-box">
-    <h1>reģistrācijas forma</h1>
+    <h1>Reģistrācijas Forma</h1>
 
     <form method="POST">
     
@@ -153,7 +172,9 @@
 
     <input type="submit" id="SubmitButton" name="send" value="Iesniegt">
 
-    <img src="logo.png">
+    <img src="logo.png" class="logo">
+    <img src="ilustracija.png" class="ilustracija">
+    <img src="header.jpg" class="header">
 
 </form>
 </div>
